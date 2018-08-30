@@ -1,17 +1,17 @@
 {
-  "name": "demotest",
+  "name": "test",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "googltest.js",
   "dependencies": {
-    "chai": "latest",
-    "lodash": "^4.17.10",
-    "request": "^2.88.0"
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "request": "latest"
   },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./node/test/*.js"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "description": ""
 }
