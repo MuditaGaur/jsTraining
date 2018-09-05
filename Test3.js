@@ -1,33 +1,35 @@
-const request = require('request');
-
-request('https://jsonplaceholder.typicode.com/users', function(err, res, body) {  
-    console.log();
-});
+var request = require('request');
+var assert = require('chai').assert;
 
 before(function(done) {
-	describe('hookbefore', function(req, body, res) {
-		var statuscode = res.statuscode;
-		var username = res.username;
-		done();
-	})
-}),
+  request('https://jsonplaceholder.typicode.com/users', function(err, res, body) {  
+    var statuscode = res.statuscode;
+    var username = body;
+    done();
+  })
+})
 	
 	
 	describe('open url', function() {
-		it('respond with opening url', function() {
-			console.log('statuscode');
-		})
+	  it('respond with opening url', function() {
+	  assert.equals(statuscode,200,'Status not matching');
 	})
+      })
+	
 	
 	describe('find user', function(done) {
-		it('respond with usernname', function() {
-			if(username== "Samantha") 
-				for(i=0; i>10; i++) {
-					console.log('username');
-				}
-		})
-	})
+          it('respond with usernname', function() {
+			
+	   for(i=0; i<username.length; i++) {
+	     if(username[i].username == 'samantha'){
+	       console.log(username[i].email);
+	       }					
+	    }
+          });
+	});
 	
 
 	
+
+
 
