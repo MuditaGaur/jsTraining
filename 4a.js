@@ -27,8 +27,5 @@ request('url2', function(err, res) {
 
 var callback = function(callback1,  callback2, err) {
 	assert.equal(callback1,  callback2, 'these 2 are different urls');
-	console.log('different urls');
-	}
-
-
-
+		}
+console.log('different urls');
