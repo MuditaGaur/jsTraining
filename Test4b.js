@@ -2,6 +2,7 @@ var request = require('request');
 var fs = require('fs');
 var assert = require('assert');
 var Promise = require('es6-promise').Promise;
+var statuscode;
 
 var myRequestFunc = function() {
 	target = 'https://www.google.com';
@@ -9,7 +10,8 @@ var myRequestFunc = function() {
 		return new promise(function(resolve, reject) {
 			function reqCallback(err, res, body) {
 			if (err) reject(err);
-			else resolve(body);
+			else resolve(statuscode);
+			console.log('satatuscode', statuscode);
 			};
 			request(url, reqCallback);
 		});
